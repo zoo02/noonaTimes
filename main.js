@@ -17,10 +17,10 @@ searchInput.addEventListener("input", () => {
 
 let url = new URL (
     // 누나api -> 과제 제출용
-    // `https://https://nntimes.netlify.app/top-headlines?country=kr`
+    `//https://nntimes.netlify.app/top-headlines?country=kr`
 
     // 뉴스 api -> 과제 테스트용
-    `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${myApiKey}`
+    // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${myApiKey}`
 )
 
 
