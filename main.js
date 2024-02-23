@@ -17,7 +17,7 @@ searchInput.addEventListener("input", () => {
 
 let url = new URL (
     // 누나api -> 과제 제출용
-    `//https://nntimes.netlify.app/top-headlines?country=kr`
+    `https://nntimes.netlify.app//top-headlines?country=kr`
 
     // 뉴스 api -> 과제 테스트용
     // `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${myApiKey}`
@@ -39,14 +39,25 @@ sideMenuListButtons.forEach((menu) => menu.addEventListener("click", moveToCateg
 async function moveToCategory (event) {
     const currentCategory = event.target.id
 
-    url = new URL(`https://newsapi.org/v2/top-headlines?country=kr&category=${currentCategory}&apiKey=${myApiKey}`)
+    url = new URL(
+        // 누나api -> 과제 제출용
+        `https://nntimes.netlify.app//top-headlines?country=kr&category=${currentCategory}`
+
+        // 뉴스 api -> 과제 테스트용
+        // `https://newsapi.org/v2/top-headlines?country=kr&category=${currentCategory}&apiKey=${myApiKey}`
+        )
     getLatestNews()
 }
 
 // 검색창에 키워드가 입력되고, 검색 버튼이 클릭 되었을 때 실행할 함수
 async function searchKeyWord(word) {
-    url = new URL(`https://newsapi.org/v2/top-headlines?country=kr&q=${word}&apiKey=${myApiKey}`)
-
+    url = new URL(
+    // 누나api -> 과제 제출용
+    `https://nntimes.netlify.app//top-headlines?country=kr&category=${currentCategory}`
+    
+    // 뉴스 api -> 과제 테스트용
+    // `https://newsapi.org/v2/top-headlines?country=kr&q=${word}&apiKey=${myApiKey}`
+    )
     getLatestNews()
 }
 
