@@ -1,0 +1,84 @@
+.headLine {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.headLine svg {
+    width: 430px;
+}
+
+.menus {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 4px double black;
+}
+
+.menus button {
+    border: none;
+    background: none;
+    margin: 5px;
+}
+
+.menus button:hover {
+    background-color: beige;
+}
+
+.newsImgSize {
+    max-width: 100%;
+    /* 부모 넓이의 100%*/
+    max-height: 250px;
+}
+
+.news {
+    border-bottom: 2px solid black;
+}
+
+.searchImg {
+    height: 50px;
+    width: 50px;
+}
+
+.sideMenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sideMenuList button {
+    margin: 5px;
+    border: none;
+    background: none;
+    width: 120px;
+}
+
+.sideMenu .closeBtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    border: none;
+    background: none;
+}
+
+.sideMenuList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sideMenuList button:hover {
+    background-color: beige;
+    border-radius: 3px;
+}
