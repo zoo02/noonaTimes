@@ -1,4 +1,5 @@
-let myApiKey = `cc6b987313df4d658e45a474e4342ead`
+// let myApiKey = `cc6b987313df4d658e45a474e4342ead`
+let myApiKey = `fee45e5ba3b947ee8fd2797d07bcd1e3`
 let newsList = []
 let menuButtons = document.querySelectorAll(".menus button")
 let sideMenuListButtons = document.querySelectorAll(".sideMenuList button")
@@ -22,23 +23,14 @@ let url = new URL (
     `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${myApiKey}`
 )
 
-const getNews = async () => {
+
+const getLatestNews = async () => {
     const response = await fetch(url)
     const data = await response.json()
     newsList = data.articles
     render()
 }
-
-const getLatestNews = async () => {
-     url = new URL(
-        // 누나api -> 과제 제출용
-        // `https://https://nntimes.netlify.app/top-headlines?country=kr`
-
-        // 뉴스 api -> 과제 테스트용
-        `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${myApiKey}`
-    )
-    getNews()
-}
+getLatestNews()
 
 menuButtons.forEach ((menu) => menu.addEventListener("click", moveToCategory))
 sideMenuListButtons.forEach((menu) => menu.addEventListener("click", moveToCategory))
@@ -48,14 +40,14 @@ async function moveToCategory (event) {
     const currentCategory = event.target.id
 
     url = new URL(`https://newsapi.org/v2/top-headlines?country=kr&category=${currentCategory}&apiKey=${myApiKey}`)
-    getNews()
+    getLatestNews()
 }
 
 // 검색창에 키워드가 입력되고, 검색 버튼이 클릭 되었을 때 실행할 함수
 async function searchKeyWord(word) {
     url = new URL(`https://newsapi.org/v2/top-headlines?country=kr&q=${word}&apiKey=${myApiKey}`)
 
-  getNews()
+    getLatestNews()
 }
 
 // 화면에 보여주는 함수
