@@ -20,11 +20,21 @@
 .menus button {
     border: none;
     background: none;
+    justify-content: center;
     margin: 5px;
 }
 
 .menus button:hover {
     background-color: beige;
+}
+
+#sideFunctions{
+    display: flex;
+    align-items: center;
+}
+
+.searchContainer{
+    display: inline;
 }
 
 .newsImgSize {
@@ -54,7 +64,9 @@
     padding-top: 60px;
     transition: 0.5s;
 }
-
+.sideMenu.active {
+    width: 250px;
+}
 .sideMenuList button {
     margin: 5px;
     border: none;
@@ -81,4 +93,21 @@
 .sideMenuList button:hover {
     background-color: beige;
     border-radius: 3px;
+}
+
+.icon-button {
+    font-size: 24px;
+    cursor: pointer; 
+}
+
+.hide {
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
 }

@@ -11,32 +11,32 @@
 </head>
 
 <body>
-    <div class="sideMenu" id="mySideNav">
-        <button class="closeBtn" onclick="closeNav()">&times;</button>
-        <div class="sideMenuList" id="menuList">
-            <button id="business">Business</button>
-            <button id="entertainment">Entertainment</button>
-            <button id="general">General</button>
-            <button id="health">Health</button>
-            <button id="science">Science</button>
-            <button id="sport">Sport</button>
-            <button id="technology">Technology</button>
-        </div>
-    </div>
-    <i class="fas fa-bars hide icon-button" onclick="openNav()"></i>
-    <span onclick="openNav()"></span>
-
-    <i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
-    <span id="inputArea">
-
-        <input type="text" id="searchInput" placeholder="search" />
-        <button class="search-button" id="searchBtn">Go</button>
-    </span>
-
-
-
-    </div>
     <section class="container">
+        <div class="sideFunctions">
+            <div class="sideMenu" id="mySideNav">
+                <button class="closeBtn" onclick="closeNav()">&times;</button>
+                <div class="sideMenuList" id="menuList">
+                    <button id="business" onClick="closeNav()">Business</button>
+                    <button id="entertainment" onClick="closeNav()">Entertainment</button>
+                    <button id="general" onClick="closeNav()">General</button>
+                    <button id="health" onClick="closeNav()">Health</button>
+                    <button id="science" onClick="closeNav()">Science</button>
+                    <button id="sport" onClick="closeNav()">Sport</button>
+                <button id="technology" onClick="closeNav()">Technology</button>
+                </div>
+            </div>
+            <i class="fas fa-bars hide icon-button" onclick="openNav()"></i>
+            <span onclick="openNav()"></span>
+
+            <i class="fas fa-search icon-button" onclick="openSearchBox()"></i>
+            <span id="inputArea" style="display: none;">
+                <div class="searchContainer">
+                    <input type="text" id="searchInput" placeholder="search" />
+                    <button type="button" class="btn btn-secondary" id="searchBtn">Go</button>
+                </div>
+            </span>
+        </div>
+    
         <section>
             <div class="headLine">
                 <svg viewBox="0 0 184 25" fill="#000" aria-hidden="true">
@@ -71,6 +71,10 @@
                 </div>
             </div>
         </section>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+            </ul>
+          </nav>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
