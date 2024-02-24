@@ -17,10 +17,10 @@ searchInput.addEventListener("input", () => {
 
 let url = new URL(
 	// 누나api -> 과제 제출용
-	// `https://nntimes.netlify.app//top-headlines?country=kr`
+	`https://nntimes.netlify.app//top-headlines?country=kr`
 
 	// 뉴스 api -> 과제 테스트용
-	`https://newsapi.org/v2/top-headlines?country=kr&pagesize=10&apiKey=${myApiKey}`
+	// `https://newsapi.org/v2/top-headlines?country=kr&pagesize=10&apiKey=${myApiKey}`
 )
 
 
@@ -110,10 +110,10 @@ async function moveToCategory(event) {
 	
 	url = new URL(
 		// 누나api -> 과제 제출용
-		// `https://nntimes.netlify.app/top-headlines?country=kr&category=${currentCategory}`
+		`https://nntimes.netlify.app/top-headlines?country=kr&category=${currentCategory}`
 		
 		// 뉴스 api -> 과제 테스트용
-		`https://newsapi.org/v2/top-headlines?country=kr&category=${currentCategory}&apiKey=${myApiKey}`
+		// `https://newsapi.org/v2/top-headlines?country=kr&category=${currentCategory}&apiKey=${myApiKey}`
 		)
 		getLatestNews()
 	}
@@ -121,10 +121,10 @@ async function moveToCategory(event) {
 async function searchKeyWord(word) {
 	url = new URL(
 		// 누나api -> 과제 제출용
-		// `https://nntimes.netlify.app/top-headlines?country=kr&q=${word}`
+		`https://nntimes.netlify.app/top-headlines?country=kr&q=${word}`
 			
 		// 뉴스 api -> 과제 테스트용
-		`https://newsapi.org/v2/top-headlines?country=kr&q=${word}&apiKey=${myApiKey}`
+		// `https://newsapi.org/v2/top-headlines?country=kr&q=${word}&apiKey=${myApiKey}`
 		)
 		getLatestNews()
 	}
