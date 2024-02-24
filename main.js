@@ -1,5 +1,5 @@
-// let myApiKey = `cc6b987313df4d658e45a474e4342ead`
-let myApiKey = `fee45e5ba3b947ee8fd2797d07bcd1e3`
+let myApiKey = `cc6b987313df4d658e45a474e4342ead`
+// let myApiKey = `fee45e5ba3b947ee8fd2797d07bcd1e3`
 let newsList = []
 let menuButtons = document.querySelectorAll(".menus button")
 let sideMenuListButtons = document.querySelectorAll(".sideMenuList button")
@@ -34,13 +34,13 @@ const pagination = () => {
 	// ex) totalResult에 102개의 기사를 받았다고 치자, 102개를 한 페이지에 10개씩만 보여주려면
 	// 102 / 10 = 10...2 결과가 나오는데 ...2에 대한 기사는 버릴 수 없으니 Math.ceil()로 올림처리를 해줘야한다
 	// 그래서 전체 페이지의 수는 11이 된다
-	const totalPages = Math.ceil(totalResults / pageSize)
+	let totalPages = Math.ceil(totalResults / pageSize)
 
 	// 전체 페이지가 11개이다. 페이지 10개씩 몇 개의 그룹이 있는지 구한다
 	let totalGroup = Math.ceil(totalPages / groupSize)
 	
 	// 현재 페이지 번호와 그룹 크기를 기반으로 현재 페이지가 속해있는 그룹을 찾는다
-	const pageGroup = Math.ceil(page / groupSize)
+	let pageGroup = Math.ceil(page / groupSize)
 
 	// 마지막 페이지가 전체 페이지보다 크면 전체 페이지까지만 보여줘야한다!
 	let lastPage = pageGroup * groupSize
@@ -51,28 +51,29 @@ const pagination = () => {
 	let firstPage = lastPage - (groupSize - 1)
 	if (firstPage <= 0){
 		 firstPage = 1 
+
 	}
 
 	let paginationHTML = ``
 
 	if (pageGroup > 1) {
-		const previousPage = firstPage - 1
-		paginationHTML += `<li class="page-item"><a class="page-link" href="#" onClick="moveToPage(${previousPage})"><</a></li>`
+		let previousPage = firstPage - 1
+		paginationHTML += `<li class="page-item" onClick="moveToPage(${previousPage})"><a class="page-link" href="#"><</a></li>`
 	} 
-
+	
 	for(let i = firstPage; i <= lastPage; i++){
-		paginationHTML += `<li class="page-item ${i === page ? "active" : "" } onClick="moveToPage(${i})"><a class="page-link" href="#">${i}</a></li>`
+		paginationHTML += `<li class="page-item ${i == page ? "active" : "" }" onClick="moveToPage(${i})"><a class="page-link" href="#">${i}</a></li>`
 	}
-
+	
 	if (pageGroup < totalGroup){
-		const nextPage = lastPage + 1
-		paginationHTML += `<li class="page-item"><a class="page-link" href="#" onClick="moveToPage(${nextPage})">></a></li>`
+		let nextPage = lastPage + 1
+		paginationHTML += `<li class="page-item" onClick="moveToPage(${nextPage})"><a class="page-link" href="#">></a></li>`
 	}
 	document.querySelector(".pagination").innerHTML = paginationHTML
 
 }
 
-const moveToPage = (pageNumber) => {
+let moveToPage = (pageNumber) => {
 	page = pageNumber
 	getLatestNews()
 }
@@ -82,7 +83,6 @@ const getLatestNews = async () => {
 	try {
 		url.searchParams.set("page", page)
 		url.searchParams.set("pageSize", pageSize)
-
 		const response = await fetch(url)
 		const data = await response.json()
 
