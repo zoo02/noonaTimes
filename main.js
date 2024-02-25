@@ -182,7 +182,6 @@ const errorMessage = (errorMessage) => {
 	document.getElementById("newsBoard").innerHTML = errorHtml
 }		
 		
-menuButtons.forEach((menu) => menu.addEventListener("click", moveToCategory))
 sideMenuListButtons.forEach((menu) => menu.addEventListener("click", moveToCategory))
 function toggleNav() {
 	let sideNav = document.getElementById("mySideNav");
