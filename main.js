@@ -1,7 +1,5 @@
 let myApiKey = `cc6b987313df4d658e45a474e4342ead`
-// let myApiKey = `fee45e5ba3b947ee8fd2797d07bcd1e3`
 let newsList = []
-let menuButtons = document.querySelectorAll(".menus button")
 let sideMenuListButtons = document.querySelectorAll(".sideMenuList button")
 let searchInput = document.getElementById("searchInput")
 let word = ""

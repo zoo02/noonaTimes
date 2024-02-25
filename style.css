@@ -9,7 +9,7 @@
 }
 
 .menus {
-    margin-top: 1em;
+    margin-top: 3em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -17,16 +17,7 @@
     border-bottom: 4px double black;
 }
 
-.menus button {
-    border: none;
-    background: none;
-    justify-content: center;
-    margin: 5px;
-}
 
-.menus button:hover {
-    background-color: beige;
-}
 
 #sideFunctions{
     display: flex;
@@ -94,6 +85,10 @@
     background-color: beige;
     border-radius: 3px;
 }
+#mySideNav.openNav .menus {
+    display: none;
+}
+
 
 .icon-button {
     font-size: 24px;
